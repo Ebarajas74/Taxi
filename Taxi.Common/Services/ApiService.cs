@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Plugin.Connectivity;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -8,9 +9,14 @@ namespace Taxi.Common.Services
 {
     public class ApiService : IApiService
     {
-        public Task<bool> CheckConnectionAsync(string url)
+        public async Task<bool> CheckConnectionAsync(string url)
         {
-            throw new NotImplementedException();
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+                return false;
+            }
+
+            return await CrossConnectivity.Current.IsRemoteReachable(url);
         }
 
         public async Task<Response> GetTaxiAsync(string plaque, string urlBase, string servicePrefix, string controller)
