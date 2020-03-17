@@ -24,12 +24,12 @@ namespace Taxi.Web.Data
         {
             await _dataContext.Database.EnsureCreatedAsync();
             await CheckRolesAsync();
-            await CheckUserAsync("1010", "Juan", "Zuluaga", "jzuluaga55@gmail.com", "350 634 2747", "Calle Luna Calle Sol", UserType.Admin);
+            await CheckUserAsync("1010", "Juan", "Zuluaga", "ebarajas@fordmontes.com", "350 634 2747", "Calle Luna Calle Sol", UserType.Admin);
             await CheckUserAsync("1111", "Enrique", "Barajas", "enbace74@gmail.com", "461 120 4923", "Cto. San Isidro", UserType.Admin);
 
-            var driver = await CheckUserAsync("2020", "Juan", "Zuluaga", "jzuluaga55@hotmail.com", "350 634 2747", "Calle Luna Calle Sol", UserType.Driver);
-            var user1 = await CheckUserAsync("3030", "Juan", "Zuluaga", "carlos.zuluaga@globant.com", "350 634 2747", "Calle Luna Calle Sol", UserType.User);
-            var user2 = await CheckUserAsync("4040", "Juan", "Zuluaga", "juanzuluaga2480@correo.itm.edu.co", "350 634 2747", "Calle Luna Calle Sol", UserType.User);
+            var driver = await CheckUserAsync("2020", "Juan", "Zuluaga", "enbace@hotmail.com", "350 634 2747", "Calle Luna Calle Sol", UserType.Driver);
+            var user1 = await CheckUserAsync("3030", "Juan", "Zuluaga", "carlos.zuluaga@globant.com.mx", "350 634 2747", "Calle Luna Calle Sol", UserType.User);
+            var user2 = await CheckUserAsync("4040", "Juan", "Zuluaga", "juanzuluaga2480@correo.itm.mx", "350 634 2747", "Calle Luna Calle Sol", UserType.User);
             
             await CheckTaxisAsync(driver, user1, user2);
         }
