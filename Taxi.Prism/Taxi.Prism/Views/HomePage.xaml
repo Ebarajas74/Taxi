@@ -6,6 +6,7 @@
              ios:Page.UseSafeArea="true"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" 
              prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:i18n="clr-namespace:Taxi.Prism.Helpers"
              x:Class="Taxi.Prism.Views.HomePage"
              BackgroundColor="{StaticResource ColorBackgroud}"
              Title="{Binding Title}">
@@ -18,7 +19,7 @@
                     CornerRadius="20"
                     HeightRequest="40"
                     Margin="10,0"
-                    Text="Start Trip"
+                    Text="{i18n:Translate StartTrip}"
                     TextColor="White"/>
         </StackLayout>
     </StackLayout>
